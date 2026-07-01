@@ -1,10 +1,10 @@
-import re
-import requests
-import pyquery
 import random
+import re
 import time
 from dataclasses import dataclass
 
+import requests
+import pyquery
 
 useragents = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36',
@@ -40,13 +40,13 @@ useragents = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36'
 ]
 
-headers = {"User-Agent": useragents[random.randint(0,len(useragents))],"accept-language": "en-US,en;q=0.9","accept-encoding": "gzip, deflate, br","accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"}
+headers = {'User-Agent': useragents[random.randint(0, len(useragents))], 'accept-language': 'en-US,en;q=0.9', 'accept-encoding': 'gzip, deflate, br', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'}
 
 
 @dataclass
 class Item:
-    title: str
-    price: float
+  title: str
+  price: float
 
 
 def get_page(url):
